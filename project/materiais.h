@@ -1,0 +1,116 @@
+#include <GL\Glut.h>
+
+GLfloat  esmeraldAmb []={ 0.0215 ,0.1745 ,0.0215 ,1.0 };
+GLfloat  esmeraldDif []={   0.07568 ,0.61424 ,0.07568 ,1.0 };
+GLfloat  esmeraldSpec []={ 0.633 ,0.727811 ,0.633 ,1.0 };
+GLint    esmeraldCoef = 0.6 *128;
+
+GLfloat  jadeAmb []={ 0.135 ,0.2225 ,0.1575 ,1.0 };
+GLfloat  jadeDif []={   0.54 ,0.89 ,0.63  ,1.0 };
+GLfloat  jadeSpec []={ 0.316228 ,0.316228 ,0.316228  ,1.0 };
+GLint   jadeCoef = 0.1 *128;
+
+GLfloat  obsidianAmb []={ 0.05375 ,0.05 ,0.06625  ,1.0 };
+GLfloat  obsidianDif []={   0.18275 ,0.17 ,0.22525  ,1.0 };
+GLfloat  obsidianSpec[] = { 0.332741 ,0.328634 ,0.346435  ,1.0 };
+GLint  obsidianCoef = 0.3 *128;
+
+GLfloat  pearlAmb []={ 0.25 ,0.20725 ,0.20725  ,1.0 };
+GLfloat  pearlDif []={   1.0 ,0.829 ,0.829  ,1.0 };
+GLfloat  pearlSpec []={ 0.296648 ,0.296648 ,0.296648 ,1.0 };
+GLint  pearlCoef = 0.088 *128;
+
+GLfloat  rubyAmb []={ 0.1745 ,0.01175 ,0.01175 ,1.0};
+GLfloat  rubyDif []={   0.61424 ,0.04136 ,0.04136,1.0 };
+GLfloat  rubySpec []={ 0.727811 ,0.626959 ,0.626959,1.0 };
+GLint  rubyCoef = 0.6 *128;
+
+GLfloat  turquoiseAmb []={ 0.1 ,0.18725 ,0.1745  ,1.0 };
+GLfloat  turquoiseDif []={   0.396 ,0.74151 ,0.69102  ,1.0 };
+GLfloat  turquoiseSpec []={ 0.297254 ,0.30829 ,0.306678  ,1.0 };
+GLint  turquoiseCoef = 0.1 *128;
+
+GLfloat  brassAmb []={ 0.329412 ,0.223529 ,0.027451 ,1.0 };
+GLfloat  brassDif []={   0.780392 ,0.568627 ,0.113725  ,1.0 };
+GLfloat  brassSpec []={ 0.992157 ,0.941176 ,0.807843  ,1.0 };
+GLint  brassCoef = 0.21794872 *128;
+
+GLfloat  bronzeAmb []={ 0.2125 ,0.1275 ,0.054 ,1.0 };
+GLfloat  bronzeDif []={   0.714 ,0.4284 ,0.18144 ,1.0 };
+GLfloat  bronzeSpec []={ 0.393548 ,0.271906 ,0.166721 ,1.0 };
+GLint  bronzeCoef = 0.2 *128;
+
+GLfloat  chromeAmb []={ 0.25 ,0.25 ,0.25 ,1.0 };
+GLfloat  chromeDif []={   0.4 ,0.4 ,0.4,1.0 };
+GLfloat  chromeSpec []={ 0.774597 ,0.774597 ,0.774597 ,1.0 };
+GLint  chromeCoef = 0.6 *128;
+
+GLfloat  copperAmb []={ 0.19125 ,0.0735 ,0.0225 ,1.0 };
+GLfloat  copperDif []={   0.7038 ,0.27048 ,0.0828 ,1.0 };
+GLfloat  copperSpec []={ 0.256777 ,0.137622 ,0.086014 ,1.0 };
+GLint  copperCoef = 0.1 *128;
+
+GLfloat  goldAmb []={ 0.24725 ,0.1995 ,0.0745 ,1.0 };
+GLfloat  goldDif []={   0.75164 ,0.60648 ,0.22648 ,1.0 };
+GLfloat  goldSpec []={ 0.628281 ,0.555802 ,0.366065 ,1.0 };
+GLint  goldCoef = 0.4 *128;
+
+GLfloat  silverAmb []={ 0.19225 ,0.19225 ,0.19225 ,1.0 };
+GLfloat  silverDif []={   0.50754 ,0.50754 ,0.50754 ,1.0 };
+GLfloat  silverSpec []={ 0.508273 ,0.508273 ,0.508273  ,1.0 };
+GLint  silverCoef = 0.4 *128;
+
+GLfloat blackPlasticAmb []={ 0.0 ,0.0 ,0.0 ,1.0 };
+GLfloat blackPlasticDif []={ 0.00 ,0.00 ,0.00 ,1.0 };
+GLfloat blackPlasticSpec[]={ 0.0 ,0.00 ,0.0 ,1.0 };
+GLint blackPlasticCoef = 0.25 *128;
+
+GLfloat  cyanPlasticAmb []={   0.0 ,0.1 ,0.06  ,1.0 };
+GLfloat  cyanPlasticDif []={   0.0 ,0.50980392 ,0.50980392  ,1.0 };
+GLfloat  cyanPlasticSpec []={  0.0 ,0.50196078 ,0.50196078  ,1.0 };
+GLint  cyanPlasticCoef = 0.25 *128;
+
+GLfloat greenPlasticAmb []={ 0.0 ,0.2 ,0.0  ,1.0 };
+GLfloat greenPlasticDif []={ 0.0 ,0.35 ,0.0  ,1.0 };
+GLfloat greenPlasticSpec []={ 0.0 ,0.55 ,0.0  ,1.0 };
+GLint greenPlasticCoef = 0.25 *128;
+
+GLfloat  redPlasticAmb []={ 0.2 ,0.0 ,0.0 ,1.0 };
+GLfloat  redPlasticDif []={   0.5 ,0.0 ,0.0  ,1.0 };
+GLfloat  redPlasticSpec []={ 0.7 ,0.0 ,0.0  ,1.0 };
+GLint  redPlasticCoef = 0.25 *128;
+
+GLfloat whitePlasticAmb []={ 0.8 ,0.8 ,0.8  ,1.0 };
+GLfloat whitePlasticDif []={   0.55 ,0.55 ,0.55 ,1.0 };
+GLfloat whitePlasticSpec []={ 0.870 ,0.870 ,0.870 ,1.0 };
+GLint whitePlasticCoef = 0.25 *128;
+
+GLfloat yellowPlasticAmb []={ 0.2 ,0.2 ,0.0 ,1.0 };
+GLfloat yellowPlasticDif []={   0.5 ,0.5 ,0.0  ,1.0 };
+GLfloat yellowPlasticSpec []={ 0.60 ,0.60 ,0.00  ,1.0 };
+GLint yellowPlasticCoef = 0.25 *128;
+
+//Black rubber
+GLfloat blackRubberAmb[] = { 0.02f, 0.02f, 0.02f, 1.0f };
+GLfloat blackRubberDif[] = { 0.01f, 0.01f, 0.01f, 1.0f };
+GLfloat blackRubberSpec[] = { 0.4f, 0.4f, 0.4f, 1.0f };
+GLfloat blackRubberCoef = 10.0f;
+
+/* wood */
+GLfloat woodAmb[] = { 0.6f,0.3f,0.0f,1.0f };
+GLfloat woodDif[] = { 0.25f,0.15f,0.0f,1.0f };
+GLfloat woodSpec[] = { 0.38f,0.22f,0.0f,1.0f };
+GLfloat woodCoef = 76.8f;
+
+
+//White rubber
+float whiteRubberAmb[] = { 0.05f,0.05f,0.05f,1.0f };
+float whiteRubberDif[] = { 0.5f,0.5f,0.5f,1.0f };
+float whiteRubberSpec[] = { 0.7f,0.7f,0.7f,1.0f };
+float whiteRubberCoef = 10.0f;
+
+/* wall*/
+GLfloat wallAmb[] = { 0.4f,0.41f,0.4f,1.0f };
+GLfloat wallDif[] = { 0.39f,0.39f,0.39f,1.0f };
+GLfloat wallSpec[] = { 0.39f,0.39f,0.39f,1.0f };
+GLfloat wallCoef = 38.4f;
